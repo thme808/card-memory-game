@@ -12,7 +12,7 @@ class EmojiMemoryGame: ObservableObject {
     //so that the view is reactive
     @Published private var model: MemoryGame<String> = createMemoryGame()
     
-    static func createMemoryGame () -> MemoryGame<String>{
+    private static func createMemoryGame () -> MemoryGame<String>{
         let emojis = ["🐹", "🐔", "🐱", "🐧","🐼","🦉","🐌","🪰"]
         return MemoryGame(numberOfPairsOfCards: 3, cardContentFactory: { pairIndex in return emojis[pairIndex] })
     }
